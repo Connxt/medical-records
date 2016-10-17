@@ -42,6 +42,18 @@ class HistoryController extends Controller
         return $doctorHistories;
     }
 
+    public function getPatientHistories($patientId) {
+        $patientHistories = \App\History::where("patient_id", $patientId)->get();
+
+        foreach($patientHistories as $patientHistory) {
+            $patientHistory->patient;
+            $patientHistory->patient;
+            $patientHistory->historyType;
+        }
+
+        return $patientHistories;
+    }
+
     public function create(Request $request) {
         $history = new \App\History;
         $history->patient_id = $request->input("patientId");

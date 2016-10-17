@@ -33,6 +33,7 @@ Route::get("/doctors/{id}", "DoctorController@get")->middleware("cors");
 Route::get("/histories", "HistoryController@index")->middleware("cors");
 Route::get("/histories/{id}", "HistoryController@get")->middleware("cors");
 Route::get("/histories/doctor/{doctorId}", "HistoryController@getDoctorHistories")->middleware("cors");
+Route::get("/histories/patient/{patientId}", "HistoryController@getPatientHistories")->middleware("cors");
 /**
  * <Create a history>
  * patientId: integer
