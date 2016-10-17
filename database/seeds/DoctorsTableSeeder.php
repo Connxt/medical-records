@@ -30,12 +30,13 @@ class DoctorsTableSeeder extends Seeder
 
 		for($i = 0; $i < $numOfDoctors; $i++) {
 			array_push($doctors, array(
+				"username" => $faker->userName,
+				"password" => "12345678",
 				"last_name" => $faker->firstName,
 				"first_name" => $faker->lastName,
 				"middle_name" => $faker->lastName,
 				"specialty" => $specialties[rand(0, count($specialties) - 1)],
-				"license_no" => $faker->uuid,
-				"password" => "12345678"
+				"license_no" => $faker->uuid
 			));
 		}
 

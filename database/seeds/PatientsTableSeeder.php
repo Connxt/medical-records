@@ -20,12 +20,13 @@ class PatientsTableSeeder extends Seeder
 
 		for($i = 0; $i < $numOfPatients; $i++) {
 			array_push($patients, array(
+				"username" => $faker->userName,
+				"password" => "12345678",
 				"last_name" => $faker->firstName,
 				"first_name" => $faker->lastName,
 				"middle_name" => $faker->lastName,
 				"date_of_birth" => $faker->dateTime,
-				"gender" => $genders[rand(0, count($genders) - 1)],
-				"password" => "12345678"
+				"gender" => $genders[rand(0, count($genders) - 1)]
 			));
 		}
 
