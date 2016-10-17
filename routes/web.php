@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("/patients", "PatientController@index");
+Route::get("/patients/{id}", "PatientController@get");
+
+Route::get("/doctors", "DoctorController@index");
+Route::get("/doctors/{id}", "DoctorController@get");
+
+Route::get("/histories", "HistoryController@index");
+Route::get("/histories/{id}", "HistoryController@get");
