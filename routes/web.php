@@ -15,11 +15,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/patients", "PatientController@index");
-Route::get("/patients/{id}", "PatientController@get");
+/**
+ * Patients
+ */
+Route::get("/patients", "PatientController@index")->middleware("cors");
+Route::get("/patients/{id}", "PatientController@get")->middleware("cors");
 
-Route::get("/doctors", "DoctorController@index");
-Route::get("/doctors/{id}", "DoctorController@get");
+/**
+ * Doctors
+ */
+Route::get("/doctors", "DoctorController@index")->middleware("cors");
+Route::get("/doctors/{id}", "DoctorController@get")->middleware("cors");
 
-Route::get("/histories", "HistoryController@index");
-Route::get("/histories/{id}", "HistoryController@get");
+/**
+ * Histories
+ */
+Route::get("/histories", "HistoryController@index")->middleware("cors");
+Route::get("/histories/{id}", "HistoryController@get")->middleware("cors");
+/**
+ * <Create a history>
+ * patientId: integer
+ * doctorId: integer
+ * historyTypeId: integer
+ * description: string
+ */
+Route::post("/history", "HistoryController@create")->middleware("cors");
+
+/**
+ * History Types
+ */
+Route::get("/history-types", "HistoryTypeController@index")->middleware("cors");
+Route::get("/history-types/{id}", "HistoryTypeController@get")->middleware("cors");
